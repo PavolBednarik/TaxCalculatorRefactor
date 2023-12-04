@@ -11,6 +11,8 @@ import java.util.Scanner;
  * @author pavol
  */
 public class TaxCalculatorRefactor {
+    
+    //income from user + validation if is numeric value
     public static double userInput(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your salary:");
@@ -23,11 +25,14 @@ public class TaxCalculatorRefactor {
         sc.close();
         return income;
     }
-
+    
+    //PRSI tax calculation
     public static double prsiTax(double income){
     double prsi = income * 0.04;
     return prsi;
     }   
+    
+    // PAYE tax calculation
     public static double payeTax (double income){
     double paye = 0;
     if (income > 40000){
@@ -39,7 +44,8 @@ public class TaxCalculatorRefactor {
         return paye;
     }
     }
-     // Usc Tax calculation
+    
+    // Usc Tax calculation
     public static double uscTax (double income){
     double usc = 0;
     
@@ -64,6 +70,7 @@ public class TaxCalculatorRefactor {
     }
     return usc;
     }
+    // returning calculated tax 
     public static void main(String[] args) {
     double income = userInput();
     double paye = payeTax(income);
