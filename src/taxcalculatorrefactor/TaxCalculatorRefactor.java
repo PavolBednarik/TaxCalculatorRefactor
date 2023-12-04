@@ -10,11 +10,12 @@ package taxcalculatorrefactor;
  */
 public class TaxCalculatorRefactor {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static double prsiTax(double income){
+    double prsi = income * 0.04;
+    return prsi;
+    }     
     public static void main(String[] args) {
-        System.out.println("Hello Word");
+    
     }
     
 }
