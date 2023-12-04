@@ -65,10 +65,10 @@ public class TaxCalculatorRefactor {
     return usc;
     }
     public static void main(String[] args) {
-      double income = userInput();
-        double paye = payeTax(income);
-        double usc = uscTax(income);
-        double prsi = prsiTax(income);
+    double income = userInput();
+    double paye = payeTax(income);
+    double usc = uscTax(income);
+    double prsi = prsiTax(income);
         System.out.println("Your tax due is: " + paye + prsi + usc);
         System.out.println("Your tax due is: " + (paye + prsi + usc));
     }
