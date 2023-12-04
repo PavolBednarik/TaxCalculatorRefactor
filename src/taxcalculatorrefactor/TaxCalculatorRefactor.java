@@ -4,11 +4,25 @@
  */
 package taxcalculatorrefactor;
 
+import java.util.Scanner;
+
 /**
  *
  * @author pavol
  */
 public class TaxCalculatorRefactor {
+    public static double userInput(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your salary:");
+        while (!sc.hasNextDouble()){
+            System.out.println("Invalid input, please enter value in numbers.");
+            sc.next();
+            System.out.println("Enter your salary");
+        }
+        double income =sc.nextDouble();
+        sc.close();
+        return income;
+    }
 
     public static double prsiTax(double income){
     double prsi = income * 0.04;
