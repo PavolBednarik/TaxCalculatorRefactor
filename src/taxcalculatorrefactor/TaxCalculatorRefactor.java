@@ -25,7 +25,31 @@ public class TaxCalculatorRefactor {
         return paye;
     }
     }
+     // Usc Tax calculation
+    public static double uscTax (double income){
+    double usc = 0;
     
+    if (income < 12012) {
+        usc = income * 0.005;
+    } else  {
+        usc += 12012 * 0.005;
+        income -= 12012;
+    } 
+    if(income < 10908) {
+        usc += income * 0.02;
+    } else {
+        usc += 10908 * 0.02;
+        income -= 10908;
+    }
+    if (income < 47198) {
+        usc += income * 0.04;
+    } else {
+        usc += 47198 * 0.04;
+        income -= 47198;
+        usc += income * 0.08;
+    }
+    return usc;
+    }
     public static void main(String[] args) {
     
     }
